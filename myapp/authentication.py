@@ -15,7 +15,8 @@ def get_authorization_header(request):
 class BasicAuthentication(BaseAuthentication):
     www_authenticate_realm = "api"
 
-    def get_authenticate_header(self, request):
+    def authenticate_header(self, request):
+        print("We have come here")
         return f"Basic realm={self.www_authenticate_realm}"
 
     def authenticate(self, request):
